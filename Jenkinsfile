@@ -6,8 +6,17 @@ pipeline {
         IMAGE_TAG = "${IMAGE_NAME}:${env.BUILD_NUMBER}"
         // KUBECONFIG = credentials('kubeconfig-credentials-id')
     }
-    
+
     stages {
+
+        stage('PR'){
+            when {
+                changeRequest target: 'main'
+            }
+            steps {
+                echo "PR: ${CHANGE_ID}"
+            }
+    	}
 
         stage('Checkout') {
             steps {
