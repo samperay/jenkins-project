@@ -8,13 +8,12 @@ pipeline {
     }
 
     stages {
-
         stage('PR'){
             when {
                 changeRequest target: 'main'
             }
             steps {
-                echo "PR: ${CHANGE_ID}"
+                echo "Pull Request: ${CHANGE_ID}"
             }
     	}
 
