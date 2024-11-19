@@ -8,20 +8,19 @@ pipeline {
     }
 
     stages {
-
         stage('PR'){
             when {
                 changeRequest target: 'main'
             }
             steps {
-                echo "PR: ${CHANGE_ID}"
+                echo "Pull Request: ${CHANGE_ID}"
             }
     	} 
 
         stage('Checkout') {
             steps {
                 git url: 'https://github.com/samperay/jenkins-project.git', branch: 'main'
-                sh "ls -ltr"
+                sh "ls -lt"
             }
         }
         stage('Setup') {
