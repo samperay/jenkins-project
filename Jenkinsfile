@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo "PR: ${CHANGE_ID}"
             }
-    	}
+    	} 
 
         stage('Checkout') {
             steps {
