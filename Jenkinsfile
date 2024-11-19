@@ -14,8 +14,9 @@ pipeline {
             }
             steps {
                 echo "Pull Request: ${CHANGE_ID}"
+                sh "printenv"
             }
-    	}
+    	} 
 
         stage('Checkout') {
             steps {
