@@ -21,8 +21,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git url: 'https://github.com/samperay/jenkins-project.git', branch: 'main'
-                sh "ls -ltr"
-                
+                sh "ls -lat"
             }
         }
         stage('Setup') {
